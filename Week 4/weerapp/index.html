@@ -34,8 +34,12 @@
   </div><!-- /.container-fluid -->
 </nav>
     <div class="row">
+    <div class="col-md-12"><p id="city" class="text-center">City</p></div>
+  </div>
+    <div class="row">
     <div class="col-md-12"><p id="tempnow" class="text-center">Temp now</p></div>
   </div>
+  <hr>
 	<div class="row">
 	  <div class="col-md-12"><p id="date" class="text-center">Date</p></div>
 	</div>
@@ -55,6 +59,9 @@
 
 
   <!-- Scripts -->
+  <!-- Google geo script -->
+  <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script> 
+
   <!-- Skycons script -->
   <script src="js/skycons.js"></script>
   <!-- Jquery script -->
@@ -63,6 +70,7 @@
 	<script src="js/bootstrap.min.js"></script>
   <!-- Script to check where you are -->
   <script type="application/javascript" src="js/app.js"></script>
+  
   <!-- Google analytics -->
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

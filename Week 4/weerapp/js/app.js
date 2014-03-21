@@ -1,6 +1,8 @@
 // Location
 var lat;
 var lon;
+var geocoder = new google.maps.Geocoder();
+var city;
 
 if(navigator.geolocation){
 
@@ -15,9 +17,25 @@ function error(){
 function getPosition(position){
 	lat = position.coords.latitude;
 	lon = position.coords.longitude;
-
+    codeLatLng(lat, lon);
 	w = new Weather(lat, lon);
 }
+  function codeLatLng(lat, lng) {
+
+    var latlng = new google.maps.LatLng(lat, lng);
+    geocoder.geocode({'latLng': latlng}, function(results, status) {
+      if (status == google.maps.GeocoderStatus.OK) {
+        if (results[1]) {
+         //formatted address
+         city = results[3].formatted_address;
+        } else {
+          alert("No results found");
+        }
+      } else {
+        alert("Geocoder failed due to: " + status);
+      }
+    });
+  }
 //End location
 
 // Change day
@@ -114,11 +132,13 @@ function loadData (){
         
         var mintemp = Math.round((weatherDay.temperatureMin-32)*5/9);
         var maxtemp =  Math.round((weatherDay.temperatureMax-32)*5/9);
-        $("#date").text(weekdays[day.getDay()] + " " + day.getDate() + " " + months[day.getMonth()] + " " + day.getFullYear())
+        $("#date").text(weekdays[day.getDay()] + " " + day.getDate() + " " + months[day.getMonth()] + " " + day.getFullYear());
+        $("#city").text("You are in " + city);
+        $("#tempnow").text("the temperature here is " + weathernow + "°C");
         $("#weather").text(weatherDay.summary);
-        $("#tempnow").text("The temperature now is " + weathernow + "°C");
         $("#mintemp").text(mintemp + "°C");
         $("#maxtemp").text(maxtemp + "°C");
+        
         var iconcode = weatherDay.icon;
 
         getIcon(iconcode);

@@ -8,10 +8,10 @@ canvas{
 	margin: 0 auto;
 	display:block;
 }
-#date, #tempnow{
+#date{
 	font-size: 36px;
 }
-#weather{
+#tempnow, #city, #weather{
 	font-size: 24px;
 }
 #maxtemp, #mintemp{
