@@ -11,7 +11,7 @@ canvas{
 #date{
 	font-size: 36px;
 }
-#tempnow, #city, #weather{
+#tempnow, ##weather{
 	font-size: 24px;
 }
 #maxtemp, #mintemp{
