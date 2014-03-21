@@ -1,0 +1,79 @@
+body{
+	margin: 20px;
+	background-color: darkblue;
+}
+#container{
+	width: 900px;
+	margin:0 auto;
+	
+}
+header{
+	background-color: white;
+	border-radius: 20px;
+	padding: 40px;
+	-webkit-animation: dieBeweegRotateX 2.0s;
+	-webkit-animation-fill-mode: forwards;
+	-webkit-transform-origin: center center;
+
+}
+#imdfoto {
+	max-width: 75px;
+	float: left;
+}
+h1{
+	float: left;
+	font-size: 20px;
+}
+
+
+.text{
+	-webkit-animation: dieBeweegFadeIn 2.0s;
+	-webkit-animation-fill-mode: forwards;
+	-webkit-transform-origin: left top;
+}
+
+nav {
+	width: 700px;
+	margin: 50px auto;
+	-webkit-animation: dieBeweegRotateY 2.0s;
+	-webkit-animation-fill-mode: forwards;
+	-webkit-transform-origin: left top;
+}
+nav img {
+	border-radius: 20px;
+	max-width: 150px;
+	margin: 20px;
+}
+nav img:hover {
+	-webkit-animation: dieBeweegScale 0.5s;
+	-webkit-animation-fill-mode: forwards;
+	-webkit-transform-origin: center center;
+}
+
+
+@-webkit-keyframes dieBeweegRotateY
+{
+	0% {-webkit-transform: rotateY(90deg)}
+	50% {-webkit-transform: rotateY(-5deg)}
+	75% {-webkit-transform: rotateY(5deg)}
+	100% {-webkit-transform: rotateY(0deg)}
+}
+
+@-webkit-keyframes dieBeweegRotateX
+{
+	0% {-webkit-transform: rotateX(90deg)}
+	50% {-webkit-transform: rotateX(-10deg)}
+	75% {-webkit-transform: rotateX(10deg)}
+	100% {-webkit-transform: rotateX(0deg)}
+}
+@-webkit-keyframes dieBeweegFadeIn
+{
+	100% {-webkit-transform: translateX(300px)}
+}
+
+
+
+@-webkit-keyframes dieBeweegScale
+{
+	100% {-webkit-transform: scale(1.2)}
+}

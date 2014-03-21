@@ -1,0 +1,18 @@
+body{
+	background-color: darkblue;
+}
+#shape1{
+	width: 10px; height: 10px; 
+    border-radius: 10px;
+	background-color: yellow;
+}
+#shape2{
+	width: 10px; height: 10px; 
+    border-radius: 10px;
+	background-color: red;
+}
+#shape3{
+	width: 10px; height: 10px; 
+    border-radius: 10px;
+	background-color: lightblue;
+}

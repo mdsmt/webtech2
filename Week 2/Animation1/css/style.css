@@ -1,0 +1,44 @@
+body{
+	background-color: darkblue;
+}
+.circle{
+	width: 10px; height: 10px; 
+    border-radius: 10px;
+	position: absolute;
+}
+#shape1{
+	background-color: yellow;
+	
+}
+#shape2{
+	background-color: red;
+	
+}
+#shape3{
+	background-color: lightblue;
+	
+}
+.shapebeweeg1{
+	-webkit-animation: diebeweeg1  1s;
+	-webkit-animation-fill-mode: forwards;
+}
+.shapebeweeg2{
+	-webkit-animation: diebeweeg2  1s;
+	-webkit-animation-fill-mode: forwards;
+}
+.shapebeweeg3{
+	-webkit-animation: diebeweeg3  1s;
+	-webkit-animation-fill-mode: forwards;
+}
+@-webkit-keyframes diebeweeg1
+{
+	100% {-webkit-transform: translateX(50px)}
+}
+@-webkit-keyframes diebeweeg2
+{
+	100% {-webkit-transform: translateX(50px) translateY(50px)}
+}
+@-webkit-keyframes diebeweeg3
+{
+	100% {-webkit-transform: translatey(50px)}
+}

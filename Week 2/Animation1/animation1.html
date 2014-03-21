@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>CSS: Animation 1</title>
+	<link rel="stylesheet" type="text/css" href="css/screen.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+	<div id="shape1" class="circle"></div>
+	<div id="shape2" class="circle"></div>
+	<div id="shape3" class="circle"></div>
+
+	<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+	<script type="text/javascript">
+	$(document).ready(function() {
+		$(".circle").click( function() {
+			$("#shape1").addClass("shapebeweeg1");
+			$("#shape2").addClass("shapebeweeg2");
+			$("#shape3").addClass("shapebeweeg3");
+		});
+	});
+	</script>
+</body>
+</html>

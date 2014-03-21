@@ -1,0 +1,19 @@
+body{
+	background-color: #06476B;
+}
+p{
+	color: #FFF;
+}
+canvas{
+	margin: 0 auto;
+	display:block;
+}
+#date{
+	font-size: 36px;
+}
+#weather{
+	font-size: 24px;
+}
+#maxtemp, #mintemp{
+	font-size: 18px;
+}
