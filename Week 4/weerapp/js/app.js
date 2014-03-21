@@ -61,6 +61,7 @@ function check(){
 function loadData (){
 	// var url = "https://api.forecast.io/forecast/"+this.key+"/"+this.lat+","+this.lon;
 	var url = "https://api.forecast.io/forecast/b90e2409c25c39a24e68b8dd6d219976/"+this.lat+","+this.lon;
+    console.log(url);
 	$.ajax({
 		url: url, 
 		type: "GET", 
@@ -105,10 +106,17 @@ function loadData (){
     	months[11] = "December";
 
 		//console.log(weekdays[day.getDay()] + " " + day.getDate() + " " + months[day.getMonth()] + " " + day.getFullYear());
+        var datenow = new Date();
+        var nowtime = datenow.getHours();
+        var nowweather = this.theWeather.hourly.data[nowtime];
+        var weathernow = Math.round((nowweather.temperature-32)*5/9);
+        console.log(weathernow);
+        
         var mintemp = Math.round((weatherDay.temperatureMin-32)*5/9);
         var maxtemp =  Math.round((weatherDay.temperatureMax-32)*5/9);
         $("#date").text(weekdays[day.getDay()] + " " + day.getDate() + " " + months[day.getMonth()] + " " + day.getFullYear())
         $("#weather").text(weatherDay.summary);
+        $("#tempnow").text("The temperature now is " + weathernow + "°C");
         $("#mintemp").text(mintemp + "°C");
         $("#maxtemp").text(maxtemp + "°C");
         var iconcode = weatherDay.icon;
