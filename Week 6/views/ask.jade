@@ -10,6 +10,14 @@ html
     #formu
         input#txtNaam(type='text', name='txtNaam', placeholder='What\'s your name?')
         br
-        textarea#txtCommentaar(row='1', name='txtCommentaar', placeholder='Give me your question!')
+        textarea#txtVraag(row='1', name='txtVraag', placeholder='Give me your question!')
         br
         button#verzenden.verzenden Send
+
+
+
+
+  block scripts
+    script(src='http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js')
+    script(src='http://localhost:8000/faye/client.js')
+    script(src='/javascripts/ask.js')
