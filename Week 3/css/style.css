@@ -6,6 +6,21 @@ li{
 }
 
 
+
+
+.prior-high{
+	background-color: #A60311;
+
+}
+.prior-medium{
+	background-color: #F26716;
+
+}
+.prior-low{
+	background-color: #023A85;
+
+}
+
 .done{
     text-decoration: line-through;
     background-color: #1A8C16;
