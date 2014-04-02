@@ -11,7 +11,7 @@
 	<li id="todo-add-item"><input type="text" id="add-item-text" /></li>
 	<li id="todo-item1" class="prior-high done">Learn about GIT</li>
 	<li id="todo-item1" class="prior-high done">Learn about Prototypes</li>
-	<li id="todo-item2" class="prior-medium ">Experiment with CSS animations</li>
+	<li id="todo-item2" class="prior-medium">Experiment with CSS animations</li>
 	<li id="todo-item1" class="prior-low">Become a Javascript ninja</li>
 	<li></li>
 </ul>
@@ -89,7 +89,29 @@
         }
         else
         {
-            this.element.className = p_class;
+        	var theclass = this.element.getAttribute("class");
+        	this.element.setAttribute("class", theclass + " " + p_class);
+        }
+
+        return this.element;
+
+    }  
+    IMDelement.prototype.deleteDone = function () {
+    
+        if (this.isArray) {
+          for (var i = 0, l = this.element.length; i < l; i++) {
+          		var theclass = this.element[i].getAttribute("class");
+          		var theclass2 = theclass.substr(0,theclass.indexOf(' '));
+          		this.element[i].setAttribute("class", theclass2);
+            }
+        }
+        else
+        {
+        	var theclass = this.element.getAttribute("class");
+          	var	theclass2 = theclass.substr(0,theclass.indexOf(' '));
+          	console.log(theclass2);
+
+          	this.element.setAttribute("class", theclass2);
         }
 
         return this.element;
@@ -113,7 +135,11 @@
 	// EIGEN CODE
 	$("li").click(function ()
 	    { 
-
+	    	var classname = $(this).element.getAttribute("class");
+	    	var afterspace = classname.substr(classname.indexOf(" ") + 1);
+	    	if(afterspace == "done"){
+	    		$(this).deleteDone();
+	    	}
 	        $(this).addClass("done");
 	    }
 	);
