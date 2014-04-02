@@ -1,0 +1,12 @@
+li{
+    list-style-type: none;
+    background-color:#777777;
+    width: 200px;
+    padding: 10px;
+}
+
+
+.done{
+    text-decoration: line-through;
+    background-color: #1A8C16;
+}
