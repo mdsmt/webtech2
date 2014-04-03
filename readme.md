@@ -21,6 +21,15 @@
 
 * Bij het klikken op de bolletjes gaan deze elks een andere kant uit. Bij de 2e opdracht (de login) zie je bij het opstarten een animatie gemaakt via CSS.
 
+# Opdracht 3 - Advanced JS ##
+***
+### Opdracht ###
+
+* ToDo App: [klik hier](https://github.com/mdsmt/webtech2/tree/master/Week%203) 
+
+### Beschrijving ###
+
+* Een simpele to do app schrijven. Hierbij moesten we gebruik maken van advanced JS.
 
 
 ## Opdracht 4 - Weerapp ##
