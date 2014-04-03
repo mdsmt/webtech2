@@ -115,13 +115,8 @@
         {
         	var theclass = this.element.getAttribute("class");
           	var	theclass2 = theclass.substr(0,theclass.indexOf(' '));
-          	console.log(theclass2);
-
-           	//this.element.setAttribute("class", theclass2);
+           	this.element.setAttribute("class", theclass2);
         }
-
-        
-
     }  
 
 
@@ -144,7 +139,7 @@
     	li.innerHTML= p_task;
     	li.setAttribute('class','prior-' + p_prior);
     	this.element[0].appendChild(li);
-    	return li;
+    	return new IMDelement(li);
     }
 
 	// EIGEN CODE
@@ -154,18 +149,13 @@
 	    	var afterspace = classname.substr(classname.indexOf(" ") + 1);
 	    	if(afterspace == "done"){
 	    		$(this).deleteDone();
-	    	}
+	    	}else{
 	        $(this).addClass("done");
+	    	}
 	    }
 	);
 
-	$("#submit").clic(function(){
-		var slct = document.getElementById('slctPriority');
-		var priority = slct.selectedIndex.value;
-
-		console.log(priority);
-
-	});
+	
 
 
 </script>
