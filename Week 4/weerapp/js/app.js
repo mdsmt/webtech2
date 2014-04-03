@@ -54,7 +54,7 @@ var Weather = function (lat, lon){
 	this.lat = lat;
 	this.lon = lon;
 	this.key = "b90e2409c25c39a24e68b8dd6d219976";
-	check();
+	this.check();
 }
 /* Gebruik van localStorage: In het geheugen opslaan van data
 
@@ -62,21 +62,21 @@ var Weather = function (lat, lon){
 	* localStorage.getItem("NAAM")
 
 */
-function check(){
+Weather.prototype.check = function(){
 	if(!localStorage.getItem("weatherdata")){
 		// Not a localStorage
-		loadData();
+		this.loadData();
 	}else{
 		// There is a storage
 		if(Date().getTime - localStorage.getItem('time')< 300000){
 			console.log("Data up-to-date");
 		}else{
 			// Old data in the storage
-			loadData();
+			this.loadData();
 		}
 	}
 }
-function loadData (){
+Weather.prototype.loadData = function (){
 	// var url = "https://api.forecast.io/forecast/"+this.key+"/"+this.lat+","+this.lon;
 	var url = "https://api.forecast.io/forecast/b90e2409c25c39a24e68b8dd6d219976/"+this.lat+","+this.lon;
     console.log(url);
@@ -93,12 +93,13 @@ function loadData (){
 
         weatherData(0);
     });
-     weatherData = function(day){
+}
+    weatherData = function(day){
     	
     	weatherDay = this.theWeather.daily.data[day];
     	show(weatherDay);
     }
-    function show(weather){
+    show = function(weather){
     	var day = new Date(weather.time*1000);
     	var weekdays = new Array();
     	weekdays[0] = "Sunday";
@@ -185,4 +186,4 @@ function loadData (){
           this.skycons.play();
     }
 
-}
+
