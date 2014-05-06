@@ -1,0 +1,49 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+/*Formulier */
+form{
+    width: 100%; 
+}
+button{
+    background-color: transparent;
+    border: none;
+    color:#183152;
+    font-family: Raleway;
+    letter-spacing: 1px;
+    font-size: 20px;
+
+}
+
+input, textarea
+{
+    background-color: transparent;
+    border: none;
+    border-bottom: solid 1px;
+    border-color: #333;
+    margin-bottom: 10px;
+    width:100%;
+    font-family: Raleway;
+    font-size: 20px;
+    color:#d8ca9d ;
+
+}
+input:focus, textarea:focus {
+    outline-width: 0;
+}
+
+textarea
+{
+   height: 150px;
+   width: 100%;
+}
+
+#verzenden{
+    cursor:pointer;
+}
