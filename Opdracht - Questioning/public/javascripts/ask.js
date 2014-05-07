@@ -1,5 +1,5 @@
 var client = new Faye.Client('http://localhost:8000/faye');
-var i = 1;
+var i = 0;
 $('#verzenden').click(function(e) {
 
 	var naam = $("#txtNaam").val();
