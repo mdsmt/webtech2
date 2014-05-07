@@ -9,6 +9,7 @@
     "express": "3.5.0",
     "jade": "*",
     "faye": "*",
-    "nodemon": "*"
+    "nodemon": "*",
+    "passport" : "*"
   }
 }
