@@ -19,10 +19,16 @@ client.subscribe('/questioning', function(questioning) {
 
 client.subscribe('/dislikevoting', function(voting) {
 	var dislikeID = voting.dislikeID;
+	var idvraag = dislikeID.substr(5);
+
 	/*var id = '#allquestionsshow #' + dislikeID;
 	$(id).css("font-size", "-=1px");*/
 
-	console.log(dislikeID);
+	var history = vraagarray[idvraag][2];
+	var future = history - 1;
+	vraagarray[idvraag][2] = future;
+	$("#allquestionsshow #" + dislikeID).html(vraagarray[idvraag][0] + ' #' + vraagarray[idvraag][2]);
+	console.log(vraagarray[idvraag][1]);		
 });
 
 client.subscribe('/likevoting', function(voting) {
