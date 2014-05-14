@@ -1,0 +1,26 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/screen.css')
+    link(rel='stylesheet', href='/stylesheets/style.css')
+  body
+    p#output Dit is een test
+    form#contactform
+    #formu
+        input#txtNaam(type='text', name='txtNaam', placeholder='What\'s your name?')
+        br
+        textarea#txtVraag(row='1', name='txtVraag', placeholder='Give me your question!')
+        br
+        button#verzenden.verzenden Send
+
+    #allquestions
+
+
+
+
+  block scripts
+    script(src='http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js')
+    script(src='http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.6.0/underscore-min.js')
+    script(src='http://localhost:8000/faye/client.js')
+    script(src='/javascripts/ask.js')
