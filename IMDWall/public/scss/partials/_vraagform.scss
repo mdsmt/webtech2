@@ -1,0 +1,44 @@
+
+#formu {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+}
+#contactform {
+    height: 20rem;
+    border: 1px solid #999;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    background-color: #fff;
+    overflow: hidden;
+}
+#txtNaam, #txtVraag {
+    font-size: 2.5rem;
+    color: #012943;
+    width: 90rem;
+    height: 5rem;
+    background: transparent;
+    margin: 1rem;
+    -webkit-border-radius: 5px ;
+    -moz-border-radius: 5px ;
+    border-radius: 5px;
+}
+
+#verzenden {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 42px;
+    width: 80px;
+    font-size: 14px;
+    color: #fff;
+    text-align: center;
+    line-height: 42px;
+    border-width: 0;
+    background-color: #012943;
+    -webkit-border-radius: 5px 0 0 5px;
+    -moz-border-radius: 5px 0 0 5px;
+    border-radius: 5px 0 0 5px;
+    cursor: pointer;
+}

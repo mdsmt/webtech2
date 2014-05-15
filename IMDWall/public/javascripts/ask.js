@@ -13,7 +13,7 @@ $('#verzenden').click(function(e) {
 		// $("#txtVraag").val("");
 		// $("#txtNaam").val("");
 		// console.log(naam + " " + vraag);
-		
+
 
 	}
 	else{

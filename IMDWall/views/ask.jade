@@ -5,14 +5,15 @@ html
     link(rel='stylesheet', href='/stylesheets/screen.css')
     link(rel='stylesheet', href='/stylesheets/style.css')
   body
-    p#output Dit is een test
-    form#contactform
+    p#output
     #formu
-        input#txtNaam(type='text', name='txtNaam', placeholder='What\'s your name?')
-        br
-        textarea#txtVraag(row='1', name='txtVraag', placeholder='Give me your question!')
-        br
-        button#verzenden.verzenden Send
+        form#contactform
+            
+            input#txtNaam(type='text', name='txtNaam', placeholder='What\'s your name?')
+            br
+            input#txtVraag(type='text', name='txtVraag', placeholder='Give me your question!')
+            br
+            button#verzenden.verzenden Send
 
     #allquestions
 
