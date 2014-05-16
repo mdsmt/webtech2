@@ -30,8 +30,8 @@ client.subscribe('/showing', function(showing) {
 			var text ='';
 			text +='<div class="likevragen" id="vraag' + i + '" >'
 			text +=		'<div class="likebutt">'
-			text +=			'<div><a href= "#"class="like">+</a></div><br />';
-			text +=			'<a href="#" class="dislike">-</a>';
+			text +=			'<div href= "#"class="like">+</div><br />';
+			text +=			'<div href="#" class="dislike">-</div>';
 			text +=		'</div>'
 			// text += 	'<p class="naam">' + naam + '</p><p class="vraag">' + vraag + '</p>'
 			text += 	'<p class="vraag">' + vraag + '</p>';
@@ -46,7 +46,7 @@ client.subscribe('/showing', function(showing) {
 });
 
 
-$("#allquestions").on("click","a.dislike",function(e) {
+$("#allquestions").on("click","div.dislike",function(e) {
 
 	var dislikeID = $(this).parent().parent().attr('id');
 	console.log(dislikeID);
@@ -55,7 +55,7 @@ $("#allquestions").on("click","a.dislike",function(e) {
 	});	
 });
 
-$("#allquestions").on("click","a.like",function(e) {
+$("#allquestions").on("click","div.like",function(e) {
 
 	var likeID = $(this).parent().parent().attr('id');
 	console.log(likeID);
