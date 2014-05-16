@@ -1,0 +1,48 @@
+@mixin margin($margin) {
+  	margin-left: $margin;
+	margin-top: $margin;
+	margin-right: $margin;
+}
+.like, .dislike, .naam, .vraag, .likebutt{
+	float: left;
+}
+/*.like, .dislike{
+	font-size: 2.0rem;
+	width: 9rem;
+	background-color: blue;
+}
+.naam{
+	width: 50rem;
+	background-color: yellow;
+}
+.vraag{
+	width: 100rem;
+	background-color: red;
+}*/
+
+.likevragen{
+	width: 100%;
+	float: left;
+	.vraag{
+		float:left;
+	}
+}
+
+.likebutt{
+	font-size: 2.0rem;
+	background-color: #012943;
+	width: 9.0rem;
+	height: 100%;
+	@include margin(1.0rem);
+	margin-left: 0rem;
+	text-align: center;
+	a{
+		color: #fff;
+		text-decoration: none;
+		text-align: center;
+	}
+	div{
+		width: 100%;
+		text-align: center;
+	}
+}

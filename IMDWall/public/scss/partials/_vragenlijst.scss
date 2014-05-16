@@ -29,15 +29,14 @@
 	margin-right: 2.0rem;
 	vertical-align: bottom;
 }
-.likediv{
+
+.likediv{ 
 	background-color: #012943;
 	width: 15.0rem;
 	height: 100%;
 	@include margin(1.0rem);
 	margin-left: 0rem;
 	float: left;
-}
-.likediv{ 
 	p{
    		font-weight: 30.0;
 		text-align: center;

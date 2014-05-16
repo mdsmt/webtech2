@@ -19,6 +19,7 @@ $('#verzenden').click(function(e) {
 	else{
 		$('#output').text("Je naam moet minsten 3 characters lang zijn en je vraag minstens 10");
 	}
+	return false;
 });
 client.subscribe('/showing', function(showing) {
 			var id = showing.id;
@@ -26,7 +27,19 @@ client.subscribe('/showing', function(showing) {
 			var naam = showing.naam;
 			var likes = showing.likes;
 			console.log(vraag + " " + id + " #" + likes);
-			$('#allquestions').prepend('<div id="vraag' + i + '" ><a href= "#"class="like">Like</a><a href="#" class="dislike">Dislike</a><p class="naam">' + naam + '</p><p class="vraag">' + vraag + '</p></div>');
+			var text ='';
+			text +='<div class="likevragen" id="vraag' + i + '" >'
+			text +=		'<div class="likebutt">'
+			text +=			'<div><a href= "#"class="like">+</a></div><br />';
+			text +=			'<a href="#" class="dislike">-</a>';
+			text +=		'</div>'
+			// text += 	'<p class="naam">' + naam + '</p><p class="vraag">' + vraag + '</p>'
+			text += 	'<p class="vraag">' + vraag + '</p>';
+			text +='</div>';
+			$('#allquestions').prepend(text);
+			
+
+			//$('#allquestions').prepend('<div id="vraag' + i + '" ><a href= "#"class="like">Like</a><a href="#" class="dislike">Dislike</a><p class="naam">' + naam + '</p><p class="vraag">' + vraag + '</p></div>');
 			$("#txtVraag").val("");
 			$("#txtNaam").val("");
 			i++;
@@ -35,7 +48,7 @@ client.subscribe('/showing', function(showing) {
 
 $("#allquestions").on("click","a.dislike",function(e) {
 
-	var dislikeID = $(this).parent().attr('id');
+	var dislikeID = $(this).parent().parent().attr('id');
 	console.log(dislikeID);
 	client.publish('/dislikevoting', {
 		 dislikeID: dislikeID
@@ -44,7 +57,7 @@ $("#allquestions").on("click","a.dislike",function(e) {
 
 $("#allquestions").on("click","a.like",function(e) {
 
-	var likeID = $(this).parent().attr('id');
+	var likeID = $(this).parent().parent().attr('id');
 	console.log(likeID);
 	client.publish('/likevoting', {
 		 likeID: likeID

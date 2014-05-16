@@ -20,10 +20,6 @@ client.subscribe('/questioning', function(questioning) {
       likes: 0
     }
 	datavraag.push(object);
-	console.log(datavraag);
-	console.log(datavraag[0].id);
-
-	console.log(datavraag['vraag'] + " door " + datavraag['gebruiker']);
 
 	$('#allquestionsshow').prepend('<div class="vragen" id="vraag' + i + '"><div class="vraagdiv"><p class="vraag">' + datavraag[i].vraag + '</p><p class="gebruikerdiv">Door ' + datavraag[i].gebruiker + '</p></div><div class="likediv"><p>' + datavraag[i].likes + '</p></div></div>');
 	client.publish('/showing', {
@@ -33,8 +29,6 @@ client.subscribe('/questioning', function(questioning) {
 	 	  likes: datavraag[i].likes
 	 	});
 	console.log(datavraag[i].vraag + " door " + datavraag[i].gebruiker);
-
-	console.log(jQuery.inArray(datavraag[i].id, datavraag[i]));
 	i++;
 
 
